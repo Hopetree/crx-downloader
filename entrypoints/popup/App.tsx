@@ -2,7 +2,7 @@
 // 不要额外引入图标库，统一使用 emoji 作为图标元素
 
 import { useEffect, useState } from 'react';
-import { extractExtensionId, generateDownloadUrl } from '@/lib/utils';
+import { extractExtensionId, generateDownloadUrl } from '@/src/lib/utils';
 
 type PageState =
   | { status: 'loading' }

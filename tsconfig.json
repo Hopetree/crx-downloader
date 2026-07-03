@@ -16,9 +16,9 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*", "./*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "entrypoints/**/*.ts", "entrypoints/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "entrypoints/**/*.ts", "entrypoints/**/*.tsx", ".wxt/wxt.d.ts"],
   "exclude": ["node_modules", ".output"]
 }
