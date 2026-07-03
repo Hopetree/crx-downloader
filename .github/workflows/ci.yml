@@ -19,31 +19,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: latest
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm ci
 
       - name: Type check
-        run: pnpm type-check
+        run: npm run type-check
 
       - name: Lint
-        run: pnpm lint
+        run: npm run lint
 
       - name: Format check
-        run: pnpm format:check
+        run: npm run format:check
 
       - name: Run tests
-        run: pnpm test
+        run: npm run test
 
       - name: Build check
-        run: pnpm build
+        run: npm run build
