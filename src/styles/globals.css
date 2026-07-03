@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 扩展 UI 基础样式 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 防止 popup 页面出现滚动条 */
+#root {
+  min-width: 320px;
+}
+
+/* details/summary 自定义样式 */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* 按钮点击波纹效果 */
+button:not(:disabled):active {
+  transform: scale(0.97);
+}
