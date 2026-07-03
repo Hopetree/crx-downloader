@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" fill="none">
+  <!-- 背景圆角矩形 -->
+  <rect x="8" y="8" width="112" height="112" rx="24" fill="#2563EB"/>
+  <!-- 拼图块/盒子 -->
+  <rect x="28" y="34" width="72" height="56" rx="8" fill="white" opacity="0.95"/>
+  <!-- 拼图凸起（上方） -->
+  <circle cx="64" cy="34" r="10" fill="white"/>
+  <circle cx="64" cy="34" r="10" fill="#2563EB" opacity="0.15"/>
+  <!-- 下载箭头 -->
+  <path d="M52 58L64 74L76 58" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="64" y1="48" x2="64" y2="70" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
+  <!-- 底部横线 -->
+  <rect x="44" y="78" width="40" height="5" rx="2.5" fill="#2563EB" opacity="0.4"/>
+</svg>
