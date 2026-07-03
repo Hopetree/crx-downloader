@@ -22,19 +22,15 @@
 ### 环境要求
 
 - Node.js >= 20
-- pnpm >= 9
 
 ### 开发
 
 ```bash
 # 安装依赖
-pnpm install
+npm install
 
 # 启动开发模式（Chrome）
-pnpm dev
-
-# 启动开发模式（Firefox）
-pnpm dev:firefox
+npm run dev
 ```
 
 ### 加载扩展
@@ -42,25 +38,33 @@ pnpm dev:firefox
 1. 打开 `chrome://extensions/`
 2. 开启「开发者模式」
 3. 点击「加载已解压的扩展程序」
-4. 选择 `.output/chrome-mv3` 目录
+4. 选择 `dist/crx-catcher` 目录
 
 ### 构建
 
 ```bash
 # 生产构建
-pnpm build
+npm run build
 
 # 打包为 .zip
-pnpm zip
+npm run zip
+```
+
+### 图标
+
+如需修改图标，编辑 `public/icons/icon.svg` 后运行：
+
+```bash
+npm run generate-icons
 ```
 
 ### 代码质量
 
 ```bash
-pnpm type-check   # TypeScript 类型检查
-pnpm lint         # ESLint 检查
-pnpm format       # Prettier 格式化
-pnpm test         # 运行测试
+npm run type-check   # TypeScript 类型检查
+npm run lint         # ESLint 检查
+npm run format       # Prettier 格式化
+npm run test         # 运行测试
 ```
 
 ### 发布新版本
@@ -75,16 +79,25 @@ pnpm test         # 运行测试
 ## 项目结构
 
 ```
+entrypoints/           # WXT 入口
+├── popup/             # Popup 弹窗
+│   ├── App.tsx        # 核心 UI 逻辑
+│   ├── main.tsx       # React 挂载入口
+│   └── index.html     # Popup HTML
+└── background.ts      # Background Service Worker
+public/
+└── icons/             # 插件图标
+    ├── icon.svg       # 图标源文件
+    ├── icon-16.png
+    ├── icon-48.png
+    └── icon-128.png
+scripts/
+└── generate-icons.mjs # SVG → PNG 图标生成
 src/
-├── entrypoints/       # WXT 入口
-│   ├── popup/         # Popup 页面
-│   │   ├── App.tsx
-│   │   ├── main.tsx
-│   │   └── index.html
-│   └── background.ts  # Background Script
-├── components/        # React 组件
-├── assets/            # 静态资源
 ├── lib/               # 工具函数
-└── styles/            # 全局样式
-    └── globals.css
+│   └── utils.ts       # URL 解析、下载链接生成
+├── styles/            # 全局样式
+│   └── globals.css
+├── components/        # React 组件
+└── assets/            # 静态资源
 ```
