@@ -1,6 +1,6 @@
 {
   "name": "crx-catcher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一键下载 Chrome 应用商店插件的离线安装包 (.crx)",
   "type": "module",
   "scripts": {
